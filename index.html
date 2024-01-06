@@ -128,7 +128,7 @@
 			
 			
 			<div>
-				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="240" height="86" src="//music.163.com/outchain/player?type=2&id=1334445174&auto=1&height=66"></iframe>
+				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="240" height="86" src="//music.163.com/outchain/player?type=2&id=1674843355&auto=1&height=66"></iframe>
 			</div>
 			
 				
@@ -230,18 +230,42 @@
             
 
   
-    <article id="post-随机单词的处理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-学生数据处理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2024/01/06/%E5%AD%A6%E7%94%9F%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" target="_blank">study</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2024/01/06/%E5%AD%A6%E7%94%9F%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" class="archive-article-date">
+        <time datetime="2024-01-06T03:57:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-06</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="猜单词游戏-python"><a href="#猜单词游戏-python" class="headerlink" title="猜单词游戏(python)"></a>猜单词游戏(python)</h1><h2 id="首先将需要猜测的单词保存"><a href="#首先将需要猜测的单词保存" class="headerlink" title="首先将需要猜测的单词保存"></a>首先将需要猜测的单词保存</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WORDS = (<span class="string">&quot;python&quot;</span>, <span class="string">&quot;jumble&quot;</span>, <span class="string">&quot;easy&quot;</span>, <span class="string">&quot;difficult&quot;</span>, <span class="string">&quot;answer&quot;</span>, <span class="string">&quot;continue&quot;</span>, <span class="string">&quot;phone&quot;</span>, <span class="string">&quot;position&quot;</span>, <span class="string">&quot;position&quot;</span>, <span class="string">&quot;game&quot;</span>) <span class="comment">#这里还可以自主添加</span></span><br></pre></td></tr></table></figure>
+    <h2 id="简单的学生数据处理"><a href="#简单的学生数据处理" class="headerlink" title="简单的学生数据处理"></a>简单的学生数据处理</h2><h3 id="对学生数据预处理"><a href="#对学生数据预处理" class="headerlink" title="对学生数据预处理"></a>对学生数据预处理</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#对学生出现某列名相同如出现x.1 进行处理</span></span><br><span class="line">data_frame=pd.read_excel(<span class="string">r&#x27;D:\17uml成绩.xls&#x27;</span>,header=<span class="number">5</span>, nrows=<span class="number">1</span>).values[<span class="number">0</span>]</span><br><span class="line">df=pd.read_excel(<span class="string">r&#x27;D:\17uml成绩.xls&#x27;</span>,header=<span class="number">5</span>, skiprows=<span class="number">1</span>)</span><br><span class="line">df.columns=data_frame</span><br></pre></td></tr></table></figure>
 
-<h2 id="将单词打乱-我写了一个方法"><a href="#将单词打乱-我写了一个方法" class="headerlink" title="将单词打乱(我写了一个方法)"></a>将单词打乱(我写了一个方法)</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">shuttle_</span>(<span class="params">s</span>):</span><br><span class="line">    s_=<span class="built_in">list</span>(s)</span><br><span class="line">    random.shuffle(s_)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;&#x27;</span>.join(s_)</span><br></pre></td></tr></table></figure>
+<h3 id="简单对数据分区间并画图"><a href="#简单对数据分区间并画图" class="headerlink" title="简单对数据分区间并画图"></a>简单对数据分区间并画图</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">age_bins = [<span class="number">0</span>,<span class="number">60</span>,<span class="number">70</span>,<span class="number">80</span>,<span class="number">90</span>,<span class="number">100</span>]</span><br><span class="line">d5= pd.concat([d4,d2],ignore_index=<span class="literal">True</span>) <span class="comment">#两个列表所相加</span></span><br><span class="line">a_bins=[<span class="number">0</span>,<span class="number">60</span>,<span class="number">70</span>,<span class="number">80</span>,<span class="number">90</span>,<span class="number">100</span>]</span><br><span class="line">d5[<span class="string">&quot;区间&quot;</span>]= pd.cut(d5[<span class="string">&quot;总评成绩&quot;</span>],bins=a_bins) <span class="comment">#产生一个区间</span></span><br><span class="line">counts=pd.value_counts(d5[<span class="string">&quot;区间&quot;</span>],sort=<span class="literal">False</span>)</span><br><span class="line"><span class="comment">##下面可以取消注释进行画图</span></span><br><span class="line"><span class="comment">#树状图有用可以画出</span></span><br><span class="line"><span class="comment"># b=plt.bar(counts.index.astype(str),counts)</span></span><br><span class="line"><span class="comment"># plt.bar_label(b,counts)</span></span><br><span class="line"><span class="comment"># d5.plot.bar(d5[&quot;区间&quot;],color=&quot;orange&quot;,edgecolor=&quot;green&quot;,width=0.6)</span></span><br><span class="line"><span class="comment"># plt.title(&quot;学生的成绩区间分布图&quot;)</span></span><br><span class="line"><span class="comment"># plt.show()</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line">WORDS = (<span class="string">&quot;python&quot;</span>, <span class="string">&quot;jumble&quot;</span>, <span class="string">&quot;easy&quot;</span>, <span class="string">&quot;difficult&quot;</span>, <span class="string">&quot;answer&quot;</span>, <span class="string">&quot;continue&quot;</span>,<span class="string">&quot;phone&quot;</span>, <span class="string">&quot;position&quot;</span>, <span class="string">&quot;position&quot;</span>, <span class="string">&quot;game&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\t  欢迎参加猜单词游戏&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\t把字母组合成一个正确的单词.&quot;</span>)</span><br><span class="line"><span class="comment"># word=random.choice(WORDS)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">shuttle_</span>(<span class="params">s</span>):</span><br><span class="line">    s_=<span class="built_in">list</span>(s)</span><br><span class="line">    random.shuffle(s_)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;&#x27;</span>.join(s_)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">danci</span>():</span><br><span class="line">    word = random.choice(WORDS)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;乱序后单词:&quot;</span>, shuttle_(word))</span><br><span class="line">    a=<span class="built_in">input</span>(<span class="string">&#x27;请你猜: &#x27;</span>)</span><br><span class="line">    <span class="keyword">while</span> <span class="number">1</span> :</span><br><span class="line">        <span class="keyword">if</span> a == word:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&#x27;真棒，你猜对了！&#x27;</span>)</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">else</span> :</span><br><span class="line">            a=<span class="built_in">input</span>(<span class="string">&#x27;猜错了，重新猜一次吧: &#x27;</span>)</span><br><span class="line"><span class="comment"># print(&quot;乱序后单词:&quot; ,shuttle_(word))</span></span><br><span class="line"></span><br><span class="line">danci()</span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    b=<span class="built_in">input</span>(<span class="string">&#x27;是否继续(Y/N):&#x27;</span>)</span><br><span class="line">    <span class="keyword">if</span> b==<span class="string">&#x27;Y&#x27;</span> <span class="keyword">or</span> b==<span class="string">&#x27;y&#x27;</span>:</span><br><span class="line">        danci()</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> xlrd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>] = [<span class="string">&#x27;SimHei&#x27;</span>]   <span class="comment">#解决中文显示问题</span></span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span>    <span class="comment"># 解决中文显示问题</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#这个注释是一个示例，为后面将excel表进行纵向排列准备</span></span><br><span class="line"><span class="comment"># data_frame=pd.read_excel(r&#x27;D:\17uml成绩.xls&#x27;,header=5, nrows=1).values[0]</span></span><br><span class="line"><span class="comment"># df=pd.read_excel(r&#x27;D:\17uml成绩.xls&#x27;,header=5, skiprows=1)</span></span><br><span class="line"><span class="comment"># df.columns=data_frame</span></span><br><span class="line">d1=pd.read_excel(<span class="string">r&#x27;D:\17uml成绩.xls&#x27;</span>,header=<span class="number">5</span>,usecols=[<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>],nrows=<span class="number">1</span>).values[<span class="number">0</span>]</span><br><span class="line">d2=pd.read_excel(<span class="string">r&#x27;D:\17uml成绩.xls&#x27;</span>,header=<span class="number">5</span>, usecols=[<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>],skiprows=<span class="number">1</span>)  <span class="comment">#得到右边那一部分</span></span><br><span class="line">d3=pd.read_excel(<span class="string">r&#x27;D:\17uml成绩.xls&#x27;</span>,header=<span class="number">5</span>,usecols=[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>],nrows=<span class="number">1</span>).values[<span class="number">0</span>]</span><br><span class="line">d4=pd.read_excel(<span class="string">r&#x27;D:\17uml成绩.xls&#x27;</span>,header=<span class="number">5</span>, usecols=[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>],skiprows=<span class="number">1</span>)  <span class="comment">#得到左边那一部分 可以单独输出试一下</span></span><br><span class="line">d4.columns=d3</span><br><span class="line">d2.columns=d1</span><br><span class="line">age_bins = [<span class="number">0</span>,<span class="number">60</span>,<span class="number">70</span>,<span class="number">80</span>,<span class="number">90</span>,<span class="number">100</span>]</span><br><span class="line">d5= pd.concat([d4,d2],ignore_index=<span class="literal">True</span>) <span class="comment">#两个列表所相加</span></span><br><span class="line">a_bins=[<span class="number">0</span>,<span class="number">60</span>,<span class="number">70</span>,<span class="number">80</span>,<span class="number">90</span>,<span class="number">100</span>]</span><br><span class="line">d5[<span class="string">&quot;区间&quot;</span>]= pd.cut(d5[<span class="string">&quot;总评成绩&quot;</span>],bins=a_bins) <span class="comment">#产生一个区间</span></span><br><span class="line">counts=pd.value_counts(d5[<span class="string">&quot;区间&quot;</span>],sort=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#树状图有用可以画出</span></span><br><span class="line"><span class="comment"># b=plt.bar(counts.index.astype(str),counts)</span></span><br><span class="line"><span class="comment"># plt.bar_label(b,counts)</span></span><br><span class="line"><span class="comment"># d5.plot.bar(d5[&quot;区间&quot;],color=&quot;orange&quot;,edgecolor=&quot;green&quot;,width=0.6)</span></span><br><span class="line"><span class="comment"># plt.title(&quot;学生的成绩区间分布图&quot;)</span></span><br><span class="line"><span class="comment"># plt.show()</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#画饼图 答案报错，明天修改</span></span><br><span class="line"><span class="comment"># plt.pie(d5[&quot;区间&quot;],labels=counts,autopct=&#x27;%3.1f%%&#x27;)</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># plt.show()</span></span><br><span class="line"><span class="comment"># print(d5)</span></span><br><span class="line"><span class="comment">#平时成绩  考试成绩  总评成绩</span></span><br><span class="line"><span class="comment">#计算各类成绩平均值、最高分、最低分</span></span><br><span class="line"><span class="built_in">print</span>(d5.agg(&#123;<span class="string">&quot;平时成绩&quot;</span>:[<span class="string">&#x27;mean&#x27;</span>,<span class="string">&#x27;max&#x27;</span>,<span class="string">&#x27;min&#x27;</span>],<span class="string">&quot;考试成绩&quot;</span>:[<span class="string">&#x27;mean&#x27;</span>,<span class="string">&#x27;max&#x27;</span>,<span class="string">&#x27;min&#x27;</span>],<span class="string">&quot;总评成绩&quot;</span>:[<span class="string">&#x27;mean&#x27;</span>,<span class="string">&#x27;max&#x27;</span>,<span class="string">&#x27;min&#x27;</span>]&#125;)) <span class="comment">#简单使用得出结果 可以上网搜索agg的使用方法</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="里面简单的还可以自己添加"><a href="#里面简单的还可以自己添加" class="headerlink" title="里面简单的还可以自己添加"></a>里面简单的还可以自己添加</h3>
+
     
 
     
@@ -256,7 +280,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2024/01/05/%E9%9A%8F%E6%9C%BA%E5%8D%95%E8%AF%8D%E7%9A%84%E5%A4%84%E7%90%86/">展开全文 >></a>
+      <a class="article-more-a" href="/2024/01/06/%E5%AD%A6%E7%94%9F%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/">展开全文 >></a>
     </p>
     
 
@@ -289,6 +313,30 @@
     <article id="post-房价数据分析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2024/01/06/%E6%88%BF%E4%BB%B7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" target="_blank">study</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2024/01/06/%E6%88%BF%E4%BB%B7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" class="archive-article-date">
+        <time datetime="2024-01-06T03:57:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-06</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
   <div class="article-entry" itemprop="articleBody">
     
     <h1 id="链家租房数据分析"><a href="#链家租房数据分析" class="headerlink" title="链家租房数据分析"></a><strong>链家租房数据分析</strong></h1><h3 id="以北京链家租房数据为例进行以下数据分析"><a href="#以北京链家租房数据为例进行以下数据分析" class="headerlink" title="以北京链家租房数据为例进行以下数据分析"></a>以北京链家租房数据为例进行以下数据分析</h3><ul>
@@ -324,7 +372,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2024/01/05/%E6%88%BF%E4%BB%B7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">展开全文 >></a>
+      <a class="article-more-a" href="/2024/01/06/%E6%88%BF%E4%BB%B7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">展开全文 >></a>
     </p>
     
 
@@ -357,9 +405,34 @@
     <article id="post-测试单词" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2024/01/06/%E6%B5%8B%E8%AF%95%E5%8D%95%E8%AF%8D/" target="_blank">study</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2024/01/06/%E6%B5%8B%E8%AF%95%E5%8D%95%E8%AF%8D/" class="archive-article-date">
+        <time datetime="2024-01-06T03:57:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-06</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
   <div class="article-entry" itemprop="articleBody">
     
-    
+    <p>马上更新！</p>
+
     
 
     
@@ -374,7 +447,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2024/01/05/%E6%B5%8B%E8%AF%95%E5%8D%95%E8%AF%8D/">展开全文 >></a>
+      <a class="article-more-a" href="/2024/01/06/%E6%B5%8B%E8%AF%95%E5%8D%95%E8%AF%8D/">展开全文 >></a>
     </p>
     
 
@@ -404,65 +477,33 @@
 
 
   
-    <article id="post-学生数据处理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-java注册" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="简单的学生数据处理"><a href="#简单的学生数据处理" class="headerlink" title="简单的学生数据处理"></a>简单的学生数据处理</h2><h3 id="对学生数据预处理"><a href="#对学生数据预处理" class="headerlink" title="对学生数据预处理"></a>对学生数据预处理</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#对学生出现某列名相同如出现x.1 进行处理</span></span><br><span class="line">data_frame=pd.read_excel(<span class="string">r&#x27;D:\17uml成绩.xls&#x27;</span>,header=<span class="number">5</span>, nrows=<span class="number">1</span>).values[<span class="number">0</span>]</span><br><span class="line">df=pd.read_excel(<span class="string">r&#x27;D:\17uml成绩.xls&#x27;</span>,header=<span class="number">5</span>, skiprows=<span class="number">1</span>)</span><br><span class="line">df.columns=data_frame</span><br></pre></td></tr></table></figure>
-
-<h3 id="简单对数据分区间并画图"><a href="#简单对数据分区间并画图" class="headerlink" title="简单对数据分区间并画图"></a>简单对数据分区间并画图</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">age_bins = [<span class="number">0</span>,<span class="number">60</span>,<span class="number">70</span>,<span class="number">80</span>,<span class="number">90</span>,<span class="number">100</span>]</span><br><span class="line">d5= pd.concat([d4,d2],ignore_index=<span class="literal">True</span>) <span class="comment">#两个列表所相加</span></span><br><span class="line">a_bins=[<span class="number">0</span>,<span class="number">60</span>,<span class="number">70</span>,<span class="number">80</span>,<span class="number">90</span>,<span class="number">100</span>]</span><br><span class="line">d5[<span class="string">&quot;区间&quot;</span>]= pd.cut(d5[<span class="string">&quot;总评成绩&quot;</span>],bins=a_bins) <span class="comment">#产生一个区间</span></span><br><span class="line">counts=pd.value_counts(d5[<span class="string">&quot;区间&quot;</span>],sort=<span class="literal">False</span>)</span><br><span class="line"><span class="comment">##下面可以取消注释进行画图</span></span><br><span class="line"><span class="comment">#树状图有用可以画出</span></span><br><span class="line"><span class="comment"># b=plt.bar(counts.index.astype(str),counts)</span></span><br><span class="line"><span class="comment"># plt.bar_label(b,counts)</span></span><br><span class="line"><span class="comment"># d5.plot.bar(d5[&quot;区间&quot;],color=&quot;orange&quot;,edgecolor=&quot;green&quot;,width=0.6)</span></span><br><span class="line"><span class="comment"># plt.title(&quot;学生的成绩区间分布图&quot;)</span></span><br><span class="line"><span class="comment"># plt.show()</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> xlrd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">&#x27;font.sans-serif&#x27;</span>] = [<span class="string">&#x27;SimHei&#x27;</span>]   <span class="comment">#解决中文显示问题</span></span><br><span class="line">plt.rcParams[<span class="string">&#x27;axes.unicode_minus&#x27;</span>] = <span class="literal">False</span>    <span class="comment"># 解决中文显示问题</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#这个注释是一个示例，为后面将excel表进行纵向排列准备</span></span><br><span class="line"><span class="comment"># data_frame=pd.read_excel(r&#x27;D:\17uml成绩.xls&#x27;,header=5, nrows=1).values[0]</span></span><br><span class="line"><span class="comment"># df=pd.read_excel(r&#x27;D:\17uml成绩.xls&#x27;,header=5, skiprows=1)</span></span><br><span class="line"><span class="comment"># df.columns=data_frame</span></span><br><span class="line">d1=pd.read_excel(<span class="string">r&#x27;D:\17uml成绩.xls&#x27;</span>,header=<span class="number">5</span>,usecols=[<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>],nrows=<span class="number">1</span>).values[<span class="number">0</span>]</span><br><span class="line">d2=pd.read_excel(<span class="string">r&#x27;D:\17uml成绩.xls&#x27;</span>,header=<span class="number">5</span>, usecols=[<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>],skiprows=<span class="number">1</span>)  <span class="comment">#得到右边那一部分</span></span><br><span class="line">d3=pd.read_excel(<span class="string">r&#x27;D:\17uml成绩.xls&#x27;</span>,header=<span class="number">5</span>,usecols=[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>],nrows=<span class="number">1</span>).values[<span class="number">0</span>]</span><br><span class="line">d4=pd.read_excel(<span class="string">r&#x27;D:\17uml成绩.xls&#x27;</span>,header=<span class="number">5</span>, usecols=[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>],skiprows=<span class="number">1</span>)  <span class="comment">#得到左边那一部分 可以单独输出试一下</span></span><br><span class="line">d4.columns=d3</span><br><span class="line">d2.columns=d1</span><br><span class="line">age_bins = [<span class="number">0</span>,<span class="number">60</span>,<span class="number">70</span>,<span class="number">80</span>,<span class="number">90</span>,<span class="number">100</span>]</span><br><span class="line">d5= pd.concat([d4,d2],ignore_index=<span class="literal">True</span>) <span class="comment">#两个列表所相加</span></span><br><span class="line">a_bins=[<span class="number">0</span>,<span class="number">60</span>,<span class="number">70</span>,<span class="number">80</span>,<span class="number">90</span>,<span class="number">100</span>]</span><br><span class="line">d5[<span class="string">&quot;区间&quot;</span>]= pd.cut(d5[<span class="string">&quot;总评成绩&quot;</span>],bins=a_bins) <span class="comment">#产生一个区间</span></span><br><span class="line">counts=pd.value_counts(d5[<span class="string">&quot;区间&quot;</span>],sort=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#树状图有用可以画出</span></span><br><span class="line"><span class="comment"># b=plt.bar(counts.index.astype(str),counts)</span></span><br><span class="line"><span class="comment"># plt.bar_label(b,counts)</span></span><br><span class="line"><span class="comment"># d5.plot.bar(d5[&quot;区间&quot;],color=&quot;orange&quot;,edgecolor=&quot;green&quot;,width=0.6)</span></span><br><span class="line"><span class="comment"># plt.title(&quot;学生的成绩区间分布图&quot;)</span></span><br><span class="line"><span class="comment"># plt.show()</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#画饼图 答案报错，明天修改</span></span><br><span class="line"><span class="comment"># plt.pie(d5[&quot;区间&quot;],labels=counts,autopct=&#x27;%3.1f%%&#x27;)</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># plt.show()</span></span><br><span class="line"><span class="comment"># print(d5)</span></span><br><span class="line"><span class="comment">#平时成绩  考试成绩  总评成绩</span></span><br><span class="line"><span class="comment">#计算各类成绩平均值、最高分、最低分</span></span><br><span class="line"><span class="built_in">print</span>(d5.agg(&#123;<span class="string">&quot;平时成绩&quot;</span>:[<span class="string">&#x27;mean&#x27;</span>,<span class="string">&#x27;max&#x27;</span>,<span class="string">&#x27;min&#x27;</span>],<span class="string">&quot;考试成绩&quot;</span>:[<span class="string">&#x27;mean&#x27;</span>,<span class="string">&#x27;max&#x27;</span>,<span class="string">&#x27;min&#x27;</span>],<span class="string">&quot;总评成绩&quot;</span>:[<span class="string">&#x27;mean&#x27;</span>,<span class="string">&#x27;max&#x27;</span>,<span class="string">&#x27;min&#x27;</span>]&#125;)) <span class="comment">#简单使用得出结果 可以上网搜索agg的使用方法</span></span><br></pre></td></tr></table></figure>
-
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2024/01/05/%E5%AD%A6%E7%94%9F%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2024/01/06/java%E6%B3%A8%E5%86%8C/" target="_blank">study</a>
+  
+    </h1>
+  
 
 
   
-    <article id="post-java简单的注册系统" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
+<a href="/2024/01/06/java%E6%B3%A8%E5%86%8C/" class="archive-article-date">
+        <time datetime="2024-01-06T03:56:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-01-06</time>
+</a>
+
+  
+  
     
+
+  
+  </header>
+  
   <div class="article-entry" itemprop="articleBody">
     
     <h2 id="java实现登入和注册-的实现"><a href="#java实现登入和注册-的实现" class="headerlink" title="java实现登入和注册 的实现"></a>java实现登入和注册 的实现</h2><h2 id="注册操作"><a href="#注册操作" class="headerlink" title="注册操作"></a>注册操作</h2><p>设置循环可以一直进行注册</p>
@@ -488,68 +529,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2024/01/05/java%E7%AE%80%E5%8D%95%E7%9A%84%E6%B3%A8%E5%86%8C%E7%B3%BB%E7%BB%9F/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-IDEA中maven文件的新建(并加上web)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-  <div class="article-entry" itemprop="articleBody">
-    
-    <h2 id="IDEA中maven文件的新建-并加上web"><a href="#IDEA中maven文件的新建-并加上web" class="headerlink" title="IDEA中maven文件的新建(并加上web)"></a>IDEA中maven文件的新建(并加上web)</h2><h6 id="1-新建一个maven文件"><a href="#1-新建一个maven文件" class="headerlink" title="1.新建一个maven文件"></a>1.新建一个maven文件</h6><p><img src="C:\Users\86151\AppData\Roaming\Typora\typora-user-images\image-20231222233342214.png" alt="image-20231222233342214"></p>
-<h6 id="2-点击next"><a href="#2-点击next" class="headerlink" title="2.点击next"></a>2.点击next</h6><p><img src="C:\Users\86151\AppData\Roaming\Typora\typora-user-images\image-20231222233501623.png" alt="image-20231222233501623"></p>
-<h6 id="3文件名（自取）"><a href="#3文件名（自取）" class="headerlink" title="3文件名（自取）"></a>3文件名（自取）</h6><p><img src="C:\Users\86151\AppData\Roaming\Typora\typora-user-images\image-20231222233540552.png" alt="image-20231222233540552"></p>
-<p>4.pom.xml是配置依赖的，可以从远程仓库调jar包过来。</p>
-<p><img src="C:\Users\86151\AppData\Roaming\Typora\typora-user-images\image-20231222233723200.png" alt="image-20231222233723200"></p>
-<h3 id="配置web项目"><a href="#配置web项目" class="headerlink" title="配置web项目"></a>配置web项目</h3><h6 id="5-点击Project-Sructure…"><a href="#5-点击Project-Sructure…" class="headerlink" title="5.点击Project Sructure…"></a>5.点击Project Sructure…</h6><p><img src="C:\Users\86151\AppData\Roaming\Typora\typora-user-images\image-20231222233821782.png" alt="image-20231222233821782"></p>
-<h6 id="6-点击Modules，选择自己建立的文件名，点击加号（需要专业版才有（破解版也可以），web）"><a href="#6-点击Modules，选择自己建立的文件名，点击加号（需要专业版才有（破解版也可以），web）" class="headerlink" title="6.点击Modules，选择自己建立的文件名，点击加号（需要专业版才有（破解版也可以），web）"></a>6.点击Modules，选择自己建立的文件名，点击加号（需要专业版才有（破解版也可以），web）</h6><p><img src="C:\Users\86151\AppData\Roaming\Typora\typora-user-images\image-20231222234038213.png" alt="image-20231222234038213"></p>
-<h6 id="7-加号后点击web（需要专业版）"><a href="#7-加号后点击web（需要专业版）" class="headerlink" title="7.加号后点击web（需要专业版）"></a>7.加号后点击web（需要专业版）</h6><p><img src="C:\Users\86151\AppData\Roaming\Typora\typora-user-images\image-20231222234141917.png" alt="image-20231222234141917"></p>
-<p>8.点击fix里面的Creat Artifact</p>
-<p><img src="C:\Users\86151\AppData\Roaming\Typora\typora-user-images\image-20231222234309424.png" alt="image-20231222234309424"></p>
-<h6 id="9-配置完成web，可以新建文件"><a href="#9-配置完成web，可以新建文件" class="headerlink" title="9.配置完成web，可以新建文件"></a>9.配置完成web，可以新建文件</h6><p><img src="C:\Users\86151\AppData\Roaming\Typora\typora-user-images\image-20231222234402259.png" alt="image-20231222234402259"></p>
-
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2024/01/05/IDEA%E4%B8%ADmaven%E6%96%87%E4%BB%B6%E7%9A%84%E6%96%B0%E5%BB%BA(%E5%B9%B6%E5%8A%A0%E4%B8%8Aweb)/">展开全文 >></a>
+      <a class="article-more-a" href="/2024/01/06/java%E6%B3%A8%E5%86%8C/">展开全文 >></a>
     </p>
     
 
@@ -587,7 +567,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2024/01/05/page/" target="_blank">page</a>
+	  <a class="article-title" href="/2024/01/05/page/" target="_blank">first</a>
   
     </h1>
   
