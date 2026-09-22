@@ -1,0 +1,57 @@
+# Hexo 站点配置
+title: 欢迎来到fan的博客
+subtitle: 记录学习与生活
+description: 姚思凡的个人博客 - Java、数据分析与学习笔记
+keywords: 博客,Java,数据分析,学习笔记
+author: 姚思凡
+language: zh-CN
+timezone: Asia/Shanghai
+
+url: https://yaosifan2023.github.io
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+pretty_urls:
+  trailing_index: true
+  trailing_html: true
+
+new_post_name: :title.md
+default_layout: post
+titlecase: false
+external_link:
+  enable: true
+  field: site
+  exclude: ""
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+syntax_highlighter: highlight.js
+highlight:
+  line_number: true
+  auto_detect: false
+  tab_replace: ""
+  wrap: true
+  exclude_languages:
+    - example
+
+index_generator:
+  path: ""
+  per_page: 10
+  order_by: -date
+
+default_category: uncategorized
+category_map:
+tag_map:
+
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# 主题
+theme: butterfly
+
+# 部署：hexo deploy 推送到 GitHub Pages 仓库
+deploy:
+  type: git
+  repo: https://github.com/yaosifan2023/yaosifan2023.github.io.git
+  branch: master

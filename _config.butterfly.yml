@@ -1,0 +1,117 @@
+# Butterfly 主题配置（覆盖默认值）
+# 文档: https://butterfly.js.org
+
+# -----------
+# 站点信息
+# -----------
+aside:
+  position: right
+  card_author:
+    enable: true
+    description: 保持学习，保持热爱
+  card_announcement:
+    enable: true
+    content: 欢迎来到我的小站 🎉
+  card_recent_post:
+    enable: true
+    limit: 5
+  card_categories:
+    enable: true
+  card_tags:
+    enable: true
+    limit: 40
+  card_webinfo:
+    enable: true
+    post_count: true
+    last_push_date: true
+
+footer:
+  owner:
+    enable: true
+    since: 2024
+  custom_text: 每天进步一点点
+  copyright: true
+
+# -----------
+# 导航栏
+# -----------
+nav:
+  logo:
+  display_title: true
+  fixed: false
+menu:
+  首页: / || fas fa-home
+  归档: /archives/ || fas fa-archive
+  标签: /tags/ || fas fa-tags
+  分类: /categories/ || fas fa-folder-open
+  关于: /about/ || fas fa-heart
+
+# -----------
+# 外观
+# -----------
+theme:
+  default: light
+  autoSwitch: true
+
+darkmode:
+  enable: true
+
+# 代码块：mac 风格窗口（Butterfly 5.x 默认 macStyle 已开启，含复制按钮）
+
+# 阅读模式 / 纯净模式
+readmode:
+  enable: true
+
+# -----------
+# 功能
+# -----------
+
+# 本地搜索（配合 hexo-generator-searchdb）
+search:
+  use: local
+  placeholder: 搜索文章…
+  preload: true
+
+# 文章目录
+toc:
+  post_title:
+    enable: true
+  enable: true
+  number: true
+  expand_all: true
+  max_depth: 4
+
+# 文章版权声明
+post_copyright:
+  enable: true
+  decode: false
+  copyright_author: 姚思凡
+  copyright_link: https://yaosifan2023.github.io
+  license: CC BY-NC-SA 4.0
+  license_link: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+# 文章打赏/分享（暂不开启）
+reward:
+  enable: false
+sharejs:
+  enable: false
+
+# 头像
+avatar:
+  img: /img/avatar.png
+  effect: false
+
+# 首页文章封面：无图则随机渐变
+index_img: ""
+default_top_img: ""
+cover:
+  default_cover:
+    - https://picsum.photos/seed/blog1/800/450
+    - https://picsum.photos/seed/blog2/800/450
+    - https://picsum.photos/seed/blog3/800/450
+
+# -----------
+# 评论（先关闭，之后可接 giscus）
+# -----------
+comments:
+  use: ""
