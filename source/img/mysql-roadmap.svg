@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="430" viewBox="0 0 960 430" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="430" fill="#FFFFFF"/>
+  <text x="480" y="32" text-anchor="middle" font-size="21" font-weight="bold" fill="#1F2937">MySQL 学习路线图 · 黑马程序员全套课程（195 集）</text>
+  <text x="480" y="54" text-anchor="middle" font-size="13" fill="#6B7280">基础篇 P1–57　→　进阶篇 P58–152　→　运维篇 P153–195</text>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9CA3AF"/>
+    </marker>
+  </defs>
+
+  <!-- 阶段间箭头 -->
+  <line x1="304" y1="95" x2="334" y2="95" stroke="#9CA3AF" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="624" y1="95" x2="654" y2="95" stroke="#9CA3AF" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- 基础篇 -->
+  <rect x="20" y="72" width="280" height="46" rx="8" fill="#0E7490"/>
+  <text x="160" y="92" text-anchor="middle" font-size="18" font-weight="bold" fill="#FFFFFF">基础篇</text>
+  <text x="160" y="110" text-anchor="middle" font-size="12" fill="#CFFAFE">P1–57 · 入门必学</text>
+
+  <rect x="20" y="128" width="280" height="38" rx="6" fill="#ECFEFF" stroke="#A5F3FC"/>
+  <text x="160" y="152" text-anchor="middle" font-size="15" fill="#155E75">数据库概述与安装</text>
+  <rect x="20" y="172" width="280" height="38" rx="6" fill="#DCFCE7" stroke="#86EFAC"/>
+  <text x="160" y="196" text-anchor="middle" font-size="15" font-weight="bold" fill="#166534">SQL 增删改查（DDL/DML/DQL）✓</text>
+  <rect x="20" y="216" width="280" height="38" rx="6" fill="#ECFEFF" stroke="#A5F3FC"/>
+  <text x="160" y="240" text-anchor="middle" font-size="15" fill="#155E75">DCL 权限控制</text>
+  <rect x="20" y="260" width="280" height="38" rx="6" fill="#ECFEFF" stroke="#A5F3FC"/>
+  <text x="160" y="284" text-anchor="middle" font-size="15" fill="#155E75">函数 · 约束</text>
+  <rect x="20" y="304" width="280" height="38" rx="6" fill="#ECFEFF" stroke="#A5F3FC"/>
+  <text x="160" y="328" text-anchor="middle" font-size="15" fill="#155E75">多表查询</text>
+  <rect x="20" y="348" width="280" height="38" rx="6" fill="#ECFEFF" stroke="#A5F3FC"/>
+  <text x="160" y="372" text-anchor="middle" font-size="15" fill="#155E75">事务</text>
+
+  <!-- 进阶篇 -->
+  <rect x="340" y="72" width="280" height="46" rx="8" fill="#C2410C"/>
+  <text x="480" y="92" text-anchor="middle" font-size="18" font-weight="bold" fill="#FFFFFF">进阶篇</text>
+  <text x="480" y="110" text-anchor="middle" font-size="12" fill="#FFEDD5">P58–152 · 深入底层</text>
+
+  <rect x="340" y="128" width="280" height="38" rx="6" fill="#FFF7ED" stroke="#FED7AA"/>
+  <text x="480" y="152" text-anchor="middle" font-size="15" fill="#9A3412">存储引擎</text>
+  <rect x="340" y="172" width="280" height="38" rx="6" fill="#FFF7ED" stroke="#FED7AA"/>
+  <text x="480" y="196" text-anchor="middle" font-size="15" fill="#9A3412">索引 · 性能分析 · SQL 优化</text>
+  <rect x="340" y="216" width="280" height="38" rx="6" fill="#FFF7ED" stroke="#FED7AA"/>
+  <text x="480" y="240" text-anchor="middle" font-size="15" fill="#9A3412">视图 · 存储过程 · 触发器</text>
+  <rect x="340" y="260" width="280" height="38" rx="6" fill="#FFF7ED" stroke="#FED7AA"/>
+  <text x="480" y="284" text-anchor="middle" font-size="15" fill="#9A3412">锁</text>
+  <rect x="340" y="304" width="280" height="38" rx="6" fill="#FFF7ED" stroke="#FED7AA"/>
+  <text x="480" y="328" text-anchor="middle" font-size="15" fill="#9A3412">InnoDB 引擎（MVCC 等）</text>
+  <rect x="340" y="348" width="280" height="38" rx="6" fill="#FFF7ED" stroke="#FED7AA"/>
+  <text x="480" y="372" text-anchor="middle" font-size="15" fill="#9A3412">MySQL 管理工具</text>
+
+  <!-- 运维篇 -->
+  <rect x="660" y="72" width="280" height="46" rx="8" fill="#BE123C"/>
+  <text x="800" y="92" text-anchor="middle" font-size="18" font-weight="bold" fill="#FFFFFF">运维篇</text>
+  <text x="800" y="110" text-anchor="middle" font-size="12" fill="#FFE4E6">P153–195 · 生产实战</text>
+
+  <rect x="660" y="128" width="280" height="38" rx="6" fill="#FFF1F2" stroke="#FECDD3"/>
+  <text x="800" y="152" text-anchor="middle" font-size="15" fill="#9F1239">日志体系</text>
+  <rect x="660" y="172" width="280" height="38" rx="6" fill="#FFF1F2" stroke="#FECDD3"/>
+  <text x="800" y="196" text-anchor="middle" font-size="15" fill="#9F1239">主从复制</text>
+  <rect x="660" y="216" width="280" height="38" rx="6" fill="#FFF1F2" stroke="#FECDD3"/>
+  <text x="800" y="240" text-anchor="middle" font-size="15" fill="#9F1239">分库分表（MyCat）</text>
+  <rect x="660" y="260" width="280" height="38" rx="6" fill="#FFF1F2" stroke="#FECDD3"/>
+  <text x="800" y="284" text-anchor="middle" font-size="15" fill="#9F1239">读写分离</text>
+
+  <text x="480" y="414" text-anchor="middle" font-size="12" fill="#6B7280">✓ = 已完成（P1–P23，对应笔记《MySQL 学习笔记 01：增删改查》）　绿色 = 当前进度</text>
+</svg>
