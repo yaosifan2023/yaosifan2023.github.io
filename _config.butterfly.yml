@@ -111,7 +111,16 @@ cover:
     - https://picsum.photos/seed/blog3/800/450
 
 # -----------
-# 评论（先关闭，之后可接 giscus）
+# 评论（Giscus，基于 GitHub Discussions）
 # -----------
 comments:
-  use: ""
+  use: Giscus
+
+giscus:
+  repo: yaosifan2023/yaosifan2023.github.io
+  repo_id: R_kgDOLBKY1Q
+  category_id: DIC_kwDOLBKY1c4DGe7Y # Announcements 分类
+  light_theme: light
+  dark_theme: dark
+  option:
+    data-lang: zh-CN
