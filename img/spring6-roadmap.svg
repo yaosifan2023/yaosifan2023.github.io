@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="430" viewBox="0 0 960 430" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="430" fill="#FFFFFF"/>
+  <text x="480" y="32" text-anchor="middle" font-size="21" font-weight="bold" fill="#1F2937">Spring6 学习路线图 · 尚硅谷全套课程（88 集）</text>
+  <text x="480" y="54" text-anchor="middle" font-size="13" fill="#6B7280">基础篇 P2–10　→　核心篇 P11–60　→　整合篇 P61–87</text>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9CA3AF"/>
+    </marker>
+  </defs>
+
+  <!-- 阶段间箭头 -->
+  <line x1="304" y1="95" x2="334" y2="95" stroke="#9CA3AF" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="624" y1="95" x2="654" y2="95" stroke="#9CA3AF" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- 基础篇 -->
+  <rect x="20" y="72" width="280" height="46" rx="8" fill="#15803D"/>
+  <text x="160" y="92" text-anchor="middle" font-size="18" font-weight="bold" fill="#FFFFFF">基础篇</text>
+  <text x="160" y="110" text-anchor="middle" font-size="12" fill="#DCFCE7">P2–10 · 入门必学</text>
+
+  <rect x="20" y="128" width="280" height="38" rx="6" fill="#F0FDF4" stroke="#BBF7D0"/>
+  <text x="160" y="152" text-anchor="middle" font-size="15" fill="#166534">Spring 概述与模块组成 ✓</text>
+  <rect x="20" y="172" width="280" height="38" rx="6" fill="#F0FDF4" stroke="#BBF7D0"/>
+  <text x="160" y="196" text-anchor="middle" font-size="15" fill="#166534">入门案例（IoC 初体验）✓</text>
+  <rect x="20" y="216" width="280" height="38" rx="6" fill="#F0FDF4" stroke="#BBF7D0"/>
+  <text x="160" y="240" text-anchor="middle" font-size="15" fill="#166534">整合 Log4j2 日志框架 ✓</text>
+
+  <!-- 核心篇 -->
+  <rect x="340" y="72" width="280" height="46" rx="8" fill="#C2410C"/>
+  <text x="480" y="92" text-anchor="middle" font-size="18" font-weight="bold" fill="#FFFFFF">核心篇</text>
+  <text x="480" y="110" text-anchor="middle" font-size="12" fill="#FFEDD5">P11–60 · 两大核心</text>
+
+  <rect x="340" y="128" width="280" height="38" rx="6" fill="#FFF7ED" stroke="#FED7AA"/>
+  <text x="480" y="152" text-anchor="middle" font-size="15" fill="#9A3412">IoC 容器 · 基于 XML 管理 Bean ✓</text>
+  <rect x="340" y="172" width="280" height="38" rx="6" fill="#FFF7ED" stroke="#FED7AA"/>
+  <text x="480" y="196" text-anchor="middle" font-size="15" fill="#9A3412">IoC 容器 · 基于注解开发 ✓</text>
+  <rect x="340" y="216" width="280" height="38" rx="6" fill="#FFF7ED" stroke="#FED7AA"/>
+  <text x="480" y="240" text-anchor="middle" font-size="15" fill="#9A3412">原理 · 手写 IoC（反射）✓</text>
+  <rect x="340" y="260" width="280" height="38" rx="6" fill="#FFF7ED" stroke="#FED7AA"/>
+  <text x="480" y="284" text-anchor="middle" font-size="15" fill="#9A3412">AOP 面向切面（代理模式）✓</text>
+
+  <!-- 整合篇 -->
+  <rect x="660" y="72" width="280" height="46" rx="8" fill="#BE123C"/>
+  <text x="800" y="92" text-anchor="middle" font-size="18" font-weight="bold" fill="#FFFFFF">整合篇</text>
+  <text x="800" y="110" text-anchor="middle" font-size="12" fill="#FFE4E6">P61–87 · 走向实战</text>
+
+  <rect x="660" y="128" width="280" height="38" rx="6" fill="#FFF1F2" stroke="#FECDD3"/>
+  <text x="800" y="152" text-anchor="middle" font-size="15" fill="#9F1239">JUnit 整合 · JdbcTemplate ✓</text>
+  <rect x="660" y="172" width="280" height="38" rx="6" fill="#DCFCE7" stroke="#86EFAC"/>
+  <text x="800" y="196" text-anchor="middle" font-size="15" font-weight="bold" fill="#166534">声明式事务（当前 · P65 起）</text>
+  <rect x="660" y="216" width="280" height="38" rx="6" fill="#FFF1F2" stroke="#FECDD3"/>
+  <text x="800" y="240" text-anchor="middle" font-size="15" fill="#9F1239">Resources 资源操作</text>
+  <rect x="660" y="260" width="280" height="38" rx="6" fill="#FFF1F2" stroke="#FECDD3"/>
+  <text x="800" y="284" text-anchor="middle" font-size="15" fill="#9F1239">国际化 i18n · 数据校验 Validation</text>
+  <rect x="660" y="304" width="280" height="38" rx="6" fill="#FFF1F2" stroke="#FECDD3"/>
+  <text x="800" y="328" text-anchor="middle" font-size="15" fill="#9F1239">AOT 提前编译 · Native Image</text>
+
+  <text x="480" y="414" text-anchor="middle" font-size="12" fill="#6B7280">✓ = 已完成（P1–P64）　绿色 = 当前进度（声明式事务 P65 起）</text>
+</svg>

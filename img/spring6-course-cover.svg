@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="40%" r="75%">
+      <stop offset="0%" stop-color="#12261a"/>
+      <stop offset="55%" stop-color="#0a1610"/>
+      <stop offset="100%" stop-color="#040a06"/>
+    </radialGradient>
+    <linearGradient id="leaf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#8fd94e"/>
+      <stop offset="55%" stop-color="#6DB33F"/>
+      <stop offset="100%" stop-color="#3f7a24"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <g fill="none" stroke="#6DB33F" opacity="0.35" stroke-width="2">
+    <circle cx="600" cy="230" r="96" opacity="0.5"/>
+    <circle cx="600" cy="230" r="116" stroke-dasharray="3 8" opacity="0.6"/>
+  </g>
+  <path d="M600 152 C 522 196 488 268 600 312 C 712 268 678 196 600 152 Z"
+        fill="url(#leaf)" opacity="0.95"/>
+  <path d="M600 166 L600 300" stroke="#0a1610" stroke-width="5" opacity="0.7"/>
+  <path d="M600 208 L574 232 M600 240 L572 268 M600 270 L580 292 M600 208 L626 232 M600 240 L628 268 M600 270 L620 292"
+        stroke="#0a1610" stroke-width="3.5" opacity="0.6" fill="none"/>
+  <text x="600" y="430" text-anchor="middle" fill="#eef7e6"
+        font-family="'Microsoft YaHei','PingFang SC',sans-serif" font-size="72" font-weight="bold" letter-spacing="14">Spring6 学习课程总结</text>
+  <text x="600" y="496" text-anchor="middle" fill="#9fce7f"
+        font-family="Georgia, serif" font-size="26" letter-spacing="9">IOC · AOP · TRANSACTION · AOT</text>
+</svg>

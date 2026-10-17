@@ -1,0 +1,540 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Spring6 课程知识分章总结 | 欢迎来到fan的博客</title><meta name="author" content="姚思凡"><meta name="copyright" content="姚思凡"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Spring6 课程知识分章总结跟着 B 站尚硅谷的 Spring6 全套课程学习（课程地址，共 88 集约 15 小时，源码级讲解）。这篇文章把课程知识按章节整理：第一节是学习路线，后面每一节对应课程的一章。每章末尾附对应的视频分 P。 第一节：学习路线  基础篇（P2–10）：Spring 概述、入门案例、整合 Log4j2 日志 核心篇（P11–60）：IoC 容器（XML + 注解）、手写">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring6 课程知识分章总结">
+<meta property="og:url" content="https://yaosifan2023.github.io/2026/10/17/Spring6%E8%AF%BE%E7%A8%8B%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="欢迎来到fan的博客">
+<meta property="og:description" content="Spring6 课程知识分章总结跟着 B 站尚硅谷的 Spring6 全套课程学习（课程地址，共 88 集约 15 小时，源码级讲解）。这篇文章把课程知识按章节整理：第一节是学习路线，后面每一节对应课程的一章。每章末尾附对应的视频分 P。 第一节：学习路线  基础篇（P2–10）：Spring 概述、入门案例、整合 Log4j2 日志 核心篇（P11–60）：IoC 容器（XML + 注解）、手写">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yaosifan2023.github.io/img/spring6-course-cover.svg">
+<meta property="article:published_time" content="2026-10-17T09:00:00.000Z">
+<meta property="article:modified_time" content="2026-10-17T08:12:05.223Z">
+<meta property="article:author" content="姚思凡">
+<meta property="article:tag" content="学习笔记">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Spring">
+<meta property="article:tag" content="框架">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yaosifan2023.github.io/img/spring6-course-cover.svg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Spring6 课程知识分章总结",
+  "url": "https://yaosifan2023.github.io/2026/10/17/Spring6%E8%AF%BE%E7%A8%8B%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/",
+  "image": "https://yaosifan2023.github.io/img/spring6-course-cover.svg",
+  "datePublished": "2026-10-17T09:00:00.000Z",
+  "dateModified": "2026-10-17T08:12:05.223Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "姚思凡",
+      "url": "https://yaosifan2023.github.io"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://yaosifan2023.github.io/2026/10/17/Spring6%E8%AF%BE%E7%A8%8B%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=5.7.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.3.1/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        const data = { value }
+
+        if (ttl != null) {
+          data.expiry = Date.now() + ttl * 86400000
+        }
+
+        localStorage.setItem(key, JSON.stringify(data))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return
+
+        try {
+          const data = JSON.parse(itemStr)
+
+          if (data.expiry && Date.now() > data.expiry) {
+            localStorage.removeItem(key)
+            return
+          }
+
+          return data.value
+        } catch {
+          localStorage.removeItem(key)
+        }
+      }
+    }
+
+    const scriptCache = new Map()
+    const cssCache = new Map()
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => {
+        if (scriptCache.has(url)) {
+          return scriptCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const script = document.createElement('script')
+
+          script.src = url
+          script.async = true
+
+          for (const key in attr) {
+            script.setAttribute(key, attr[key])
+          }
+
+          script.onload = resolve
+          script.onerror = reject
+
+          document.head.appendChild(script)
+        })
+
+        scriptCache.set(url, promise)
+
+        return promise
+      },
+      getCSS: (url, id) => {
+        if (cssCache.has(url)) {
+          return cssCache.get(url)
+        }
+
+        const promise = new Promise((resolve, reject) => {
+          const link = document.createElement('link')
+
+          link.rel = 'stylesheet'
+          link.href = url
+
+          if (id) {
+            link.id = id
+          }
+
+          link.onload = resolve
+          link.onerror = reject
+
+          document.head.appendChild(link)
+        })
+
+        cssCache.set(url, promise)
+
+        return promise
+      },
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]')
+      const activateDarkMode = () => {
+        document.documentElement.dataset.theme = 'dark'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.dataset.theme = 'light'
+        if (metaThemeColor !== null) {
+          metaThemeColor.setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.13.0/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Spring6 课程知识分章总结',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/videos/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></div><div class="menus_item"><a class="site-page" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书籍</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/spring6-course-cover.svg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">欢迎来到fan的博客</span></a><a class="nav-page-title" href="/"><span class="site-name">Spring6 课程知识分章总结</span><span class="site-name"><i class="fa-solid fa-circle-arrow-left"></i><span>  返回首页</span></span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/videos/"><i class="fa-fw fas fa-video"></i><span> 视频</span></a></div><div class="menus_item"><a class="site-page" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书籍</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Spring6 课程知识分章总结</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-10-17T09:00:00.000Z" title="发表于 2026-10-17 17:00:00">2026-10-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-10-17T08:12:05.223Z" title="更新于 2026-10-17 16:12:05">2026-10-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%A1%86%E6%9E%B6/">框架</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="Spring6-课程知识分章总结"><a href="#Spring6-课程知识分章总结" class="headerlink" title="Spring6 课程知识分章总结"></a>Spring6 课程知识分章总结</h2><p>跟着 B 站尚硅谷的 Spring6 全套课程学习（<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1kR4y1b7Qc/">课程地址</a>，共 88 集约 15 小时，源码级讲解）。这篇文章把课程知识按章节整理：第一节是学习路线，后面每一节对应课程的一章。每章末尾附对应的视频分 P。</p>
+<h2 id="第一节：学习路线"><a href="#第一节：学习路线" class="headerlink" title="第一节：学习路线"></a>第一节：学习路线</h2><p><img src="/img/spring6-roadmap.svg" alt="Spring6 学习路线图"></p>
+<ul>
+<li><strong>基础篇（P2–10）</strong>：Spring 概述、入门案例、整合 Log4j2 日志</li>
+<li><strong>核心篇（P11–60）</strong>：IoC 容器（XML + 注解）、手写 IoC 原理、AOP 面向切面</li>
+<li><strong>整合篇（P61–87）</strong>：JUnit、JdbcTemplate、声明式事务、Resources、国际化、数据校验、AOT</li>
+</ul>
+<blockquote>
+<p>我的进度：P1–P64 已完成，从声明式事务（P65）继续往后学。</p>
+</blockquote>
+<h2 id="第二节：基础篇"><a href="#第二节：基础篇" class="headerlink" title="第二节：基础篇"></a>第二节：基础篇</h2><h3 id="2-1-Spring-概述"><a href="#2-1-Spring-概述" class="headerlink" title="2.1 Spring 概述"></a>2.1 Spring 概述</h3><ul>
+<li><strong>Spring 是什么</strong>：一款主流的 Java EE 轻量级开源框架，广义上是 Spring 全家桶生态，狭义上指 Spring Framework（IoC + AOP 的容器框架）。</li>
+<li><strong>核心特点</strong>：非侵入式（不依赖框架 API）、控制反转 IoC、面向切面 AOP、一站式整合各种框架。</li>
+<li><strong>模块组成</strong>：Core Container（core&#x2F;beans&#x2F;context&#x2F;spEL）是地基，其上是 AOP&#x2F;Aspects、Data Access（jdbc&#x2F;orm&#x2F;tx）、Web、Test 等模块。</li>
+<li>**Spring6 要求 JDK 17+**（课程配套：Spring 6.0.x + JDK17 + IDEA + Maven）。</li>
+</ul>
+<p>视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1kR4y1b7Qc/?p=2">P2–P5</a></p>
+<h3 id="2-2-入门案例"><a href="#2-2-入门案例" class="headerlink" title="2.2 入门案例"></a>2.2 入门案例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 引入依赖 spring-context；2. 写一个普通类</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">User</span> &#123; <span class="keyword">public</span> <span class="type">void</span> <span class="title function_">add</span><span class="params">()</span> &#123; System.out.println(<span class="string">&quot;add ...&quot;</span>); &#125; &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. beans.xml：&lt;bean id=&quot;user&quot; class=&quot;com.atguigu.User&quot;/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. 测试：容器接管对象创建</span></span><br><span class="line"><span class="type">ApplicationContext</span> <span class="variable">ctx</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ClassPathXmlApplicationContext</span>(<span class="string">&quot;beans.xml&quot;</span>);</span><br><span class="line"><span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> ctx.getBean(<span class="string">&quot;user&quot;</span>, User.class);</span><br><span class="line">user.add();</span><br></pre></td></tr></table></figure>
+
+<p><strong>程序分析</strong>：底层就是<strong>反射</strong>（<code>Class.forName</code> + 构造器）创建对象；我们不再 <code>new</code>，创建权交给了容器 —— 这就是控制反转的初体验。</p>
+<p>视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1kR4y1b7Qc/?p=6">P6–P8</a></p>
+<h3 id="2-3-整合-Log4j2-日志框架"><a href="#2-3-整合-Log4j2-日志框架" class="headerlink" title="2.3 整合 Log4j2 日志框架"></a>2.3 整合 Log4j2 日志框架</h3><ul>
+<li>引入 <code>spring-boot-starter-log4j2</code>（或 <code>log4j2-core</code> + <code>log4j2-slf4j2-impl</code>），排除默认的 spring-jcl 依赖。</li>
+<li><code>log4j2.xml</code> 配置：<code>Configuration &gt; Appenders（Console/File/RollingFile）&gt; Loggers</code>，日志级别 <code>trace &lt; debug &lt; info &lt; warn &lt; error &lt; fatal</code>。</li>
+</ul>
+<p>视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1kR4y1b7Qc/?p=9">P9–P10</a></p>
+<h2 id="第三节：IoC-容器（核心一）"><a href="#第三节：IoC-容器（核心一）" class="headerlink" title="第三节：IoC 容器（核心一）"></a>第三节：IoC 容器（核心一）</h2><h3 id="3-1-IoC-与-DI-概念"><a href="#3-1-IoC-与-DI-概念" class="headerlink" title="3.1 IoC 与 DI 概念"></a>3.1 IoC 与 DI 概念</h3><ul>
+<li><strong>控制反转 IoC</strong>：对象的创建权由程序反转给容器，降低耦合。</li>
+<li><strong>依赖注入 DI</strong>：IoC 的实现方式 —— 容器在创建 bean 时自动给它的属性赋值（IoC 是思想，DI 是手段）。</li>
+<li><strong>两种实现</strong>：<code>BeanFactory</code>（基础，懒加载）与 <code>ApplicationContext</code>（超集，启动即加载、事件&#x2F;国际化等企业功能）。常用实现类：<code>ClassPathXmlApplicationContext</code>、<code>FileSystemXmlApplicationContext</code>、<code>AnnotationConfigApplicationContext</code>。</li>
+</ul>
+<p>视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1kR4y1b7Qc/?p=11">P11–P13</a></p>
+<h3 id="3-2-基于-XML-管理-Bean（13-个实验）"><a href="#3-2-基于-XML-管理-Bean（13-个实验）" class="headerlink" title="3.2 基于 XML 管理 Bean（13 个实验）"></a>3.2 基于 XML 管理 Bean（13 个实验）</h3><table>
+<thead>
+<tr>
+<th>#</th>
+<th>实验</th>
+<th>关键点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>一</td>
+<td>获取 bean</td>
+<td><code>getBean(id)</code> &#x2F; <code>getBean(类型)</code>；同一个 bean 默认单例</td>
+</tr>
+<tr>
+<td>二</td>
+<td>setter 注入</td>
+<td><code>&lt;property name=&quot;...&quot; value/ref=&quot;...&quot;/&gt;</code> 调用 setter</td>
+</tr>
+<tr>
+<td>三</td>
+<td>构造器注入</td>
+<td><code>&lt;constructor-arg name/index value ref/&gt;</code>；重载按参数匹配</td>
+</tr>
+<tr>
+<td>四</td>
+<td>特殊值</td>
+<td><code>null</code> 用 <code>&lt;null/&gt;</code>；XML 特殊字符用 <code>&lt;![CDATA[&gt;]]&gt;</code>；实体字符 <code>&amp;gt;</code></td>
+</tr>
+<tr>
+<td>五</td>
+<td>对象属性</td>
+<td>引用外部 bean <code>ref</code>；内部 bean（匿名、外部拿不到）；级联赋值</td>
+</tr>
+<tr>
+<td>六</td>
+<td>数组属性</td>
+<td><code>&lt;array&gt;&lt;value&gt;</code></td>
+</tr>
+<tr>
+<td>七</td>
+<td>集合属性</td>
+<td><code>&lt;list&gt;</code> <code>&lt;map&gt;&lt;entry key value/&gt;</code> <code>&lt;set&gt;</code>；<code>util:list</code> 定义独立集合 bean 再引用</td>
+</tr>
+<tr>
+<td>八</td>
+<td>p 命名空间</td>
+<td><code>xmlns:p</code>，<code>p:xxx=&quot;值&quot; p:xxx-ref=&quot;ref&quot;</code> 简化 setter 注入</td>
+</tr>
+<tr>
+<td>九</td>
+<td>引入外部文件</td>
+<td><code>xmlns:context</code> + <code>&lt;context:property-placeholder&gt;</code> + <code>$&#123;jdbc.url&#125;</code>（典型：数据库配置）</td>
+</tr>
+<tr>
+<td>十</td>
+<td>作用域</td>
+<td><code>scope=&quot;singleton&quot;</code>（默认，容器启动即创建一份）&#x2F; <code>&quot;prototype&quot;</code>（每次 getBean 新建）</td>
+</tr>
+<tr>
+<td>十一</td>
+<td>生命周期</td>
+<td>实例化 → 属性注入 → <strong>BeanPostProcessor 前置</strong> → 初始化方法（<code>init-method</code> &#x2F; <code>@PostConstruct</code>）→ <strong>后置</strong> → 使用 → 销毁（<code>destroy-method</code> &#x2F; <code>@PreDestroy</code>，仅单例由容器管理）</td>
+</tr>
+<tr>
+<td>十二</td>
+<td>FactoryBean</td>
+<td>实现 <code>getObject()/getObjectType()/isSingleton()</code>，容器里放的是工厂<strong>产出</strong>的对象</td>
+</tr>
+<tr>
+<td>十三</td>
+<td>自动装配</td>
+<td><code>autowire=&quot;byType&quot;</code>（唯一类型匹配）&#x2F; <code>&quot;byName&quot;</code>（id 与属性名一致）；XML 自动装配不常用，注解才是主角</td>
+</tr>
+</tbody></table>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">&quot;userController&quot;</span> <span class="attr">class</span>=<span class="string">&quot;com.atguigu.controller.UserController&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">&quot;userService&quot;</span> <span class="attr">ref</span>=<span class="string">&quot;userService&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1kR4y1b7Qc/?p=14">P14–P37</a></p>
+<h3 id="3-3-基于注解管理-Bean"><a href="#3-3-基于注解管理-Bean" class="headerlink" title="3.3 基于注解管理 Bean"></a>3.3 基于注解管理 Bean</h3><ul>
+<li><strong>开启组件扫描</strong>：<code>&lt;context:component-scan base-package=&quot;com.atguigu&quot;/&gt;</code>。</li>
+<li><strong>标识组件</strong>：<code>@Component</code> 通用，语义化衍生 <code>@Service</code>（业务层）、<code>@Repository</code>（持久层）、<code>@Controller</code>（控制层）；value 即 bean id，默认类名首字母小写。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>注入方式</th>
+<th>匹配逻辑</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>@Autowired</code></td>
+<td>先 <strong>byType</strong>，多个同类型再 <strong>byName</strong></td>
+<td>Spring 提供；找不到配合 <code>@Qualifier(&quot;xxx&quot;)</code>；<code>@Primary</code> 优先</td>
+</tr>
+<tr>
+<td><code>@Resource</code></td>
+<td>先 <strong>byName</strong>，找不到再 byType</td>
+<td>JDK 标准（Jakarta）扩展包</td>
+</tr>
+<tr>
+<td>普通属性</td>
+<td><code>@Value(&quot;...&quot;)</code></td>
+<td>结合 <code>$&#123;&#125;</code> 读外部配置</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>全注解开发</strong>：<code>@Configuration</code> + <code>@ComponentScan</code> 取代 XML，用 <code>AnnotationConfigApplicationContext(配置类.class)</code> 启动。</li>
+</ul>
+<p>视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1kR4y1b7Qc/?p=38">P38–P43</a></p>
+<h2 id="第四节：手写-IoC（原理）"><a href="#第四节：手写-IoC（原理）" class="headerlink" title="第四节：手写 IoC（原理）"></a>第四节：手写 IoC（原理）</h2><ul>
+<li><strong>回顾反射</strong>：<code>Class.forName</code> 三种获取方式、<code>getDeclaredConstructor().newInstance()</code>、私有成员 <code>setAccessible(true)</code>、注解的读取（<code>isAnnotationPresent</code> &#x2F; <code>getAnnotation</code>）。</li>
+<li><strong>模拟实现</strong>：自定义 <code>@MyComponent</code> + <code>@MyDi</code>，扫描包下所有 class → 有注解的反射实例化放入 <code>Map&lt;类名, 对象&gt;</code> → 遍历字段，带 <code>@MyDi</code> 的反射注入。</li>
+<li><strong>收获</strong>：真正理解”容器 &#x3D; 反射 + 注解 + Map”，@Autowired 本质也是这套流程。</li>
+</ul>
+<p>视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1kR4y1b7Qc/?p=44">P44–P51</a></p>
+<h2 id="第五节：AOP-面向切面（核心二）"><a href="#第五节：AOP-面向切面（核心二）" class="headerlink" title="第五节：AOP 面向切面（核心二）"></a>第五节：AOP 面向切面（核心二）</h2><ul>
+<li><strong>场景</strong>：计算器每个方法都要日志、异常处理 —— 代码重复 → 引出代理。</li>
+<li><strong>静态代理</strong>：写一个代理类包一层，接口一变两边都改，繁琐。</li>
+<li><strong>动态代理（JDK）</strong>：<code>Proxy.newProxyInstance(类加载器, 接口数组, InvocationHandler)</code>，运行时生成代理类，无侵入地加日志&#x2F;异常。</li>
+<li><strong>术语</strong>：横切关注点、<strong>连接点</strong>（哪些方法）、<strong>切入点</strong>（实际被增强的方法，表达式定位）、<strong>通知</strong>（增强逻辑）、<strong>切面</strong>（切入点 + 通知）。</li>
+</ul>
+<p><strong>基于注解的 AOP</strong>（AspectJ 表达式：<code>execution(修饰符 返回类型 包.类.方法(参数))</code>）：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Aspect</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@Order(1)</span>                              <span class="comment">// 切面优先级，越小越先执行</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LogAspect</span> &#123;</span><br><span class="line">    <span class="meta">@Pointcut(&quot;execution(* com.atguigu.calculator..*.*(..))&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">void</span> <span class="title function_">pc</span><span class="params">()</span> &#123;&#125;                <span class="comment">// 重用切入点</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Before(&quot;pc()&quot;)</span>            <span class="keyword">public</span> <span class="type">void</span> <span class="title function_">before</span><span class="params">(JoinPoint jp)</span> &#123;&#125;</span><br><span class="line">    <span class="meta">@AfterReturning(&quot;pc()&quot;)</span>    <span class="keyword">public</span> <span class="type">void</span> <span class="title function_">afterReturning</span><span class="params">(JoinPoint jp, Object result)</span> &#123;&#125;</span><br><span class="line">    <span class="meta">@AfterThrowing(&quot;pc()&quot;)</span>     <span class="keyword">public</span> <span class="type">void</span> <span class="title function_">afterThrowing</span><span class="params">(JoinPoint jp, Throwable ex)</span> &#123;&#125;</span><br><span class="line">    <span class="meta">@After(&quot;pc()&quot;)</span>             <span class="keyword">public</span> <span class="type">void</span> <span class="title function_">after</span><span class="params">(JoinPoint jp)</span> &#123;&#125;          <span class="comment">// finally</span></span><br><span class="line">    <span class="meta">@Around(&quot;pc()&quot;)</span>            <span class="keyword">public</span> <span class="type">Object</span> <span class="title function_">around</span><span class="params">(ProceedingJoinPoint pjp)</span> <span class="keyword">throws</span> Throwable &#123;</span><br><span class="line">        <span class="comment">// 前置</span></span><br><span class="line">        <span class="type">Object</span> <span class="variable">ret</span> <span class="operator">=</span> pjp.proceed();     <span class="comment">// 执行目标方法</span></span><br><span class="line">        <span class="comment">// 后置</span></span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>环绕通知最万能，等价于前四种的组合；<code>@After</code> 无论正常&#x2F;异常都执行。</li>
+<li>也有基于 XML 的 AOP：<code>&lt;aop:config&gt;</code> + <code>&lt;aop:aspect ref&gt;</code> + <code>&lt;aop:pointcut&gt;</code>，思想一致。</li>
+</ul>
+<p>视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1kR4y1b7Qc/?p=52">P52–P60</a></p>
+<h2 id="第六节：整合篇"><a href="#第六节：整合篇" class="headerlink" title="第六节：整合篇"></a>第六节：整合篇</h2><h3 id="6-1-单元测试-JUnit"><a href="#6-1-单元测试-JUnit" class="headerlink" title="6.1 单元测试 JUnit"></a>6.1 单元测试 JUnit</h3><ul>
+<li>JUnit5：<code>@ExtendWith(SpringExtension.class)</code> + <code>@ContextConfiguration(&quot;classpath:beans.xml&quot;)</code>，或合并注解 <code>@SpringJUnitConfig(locations = &quot;...&quot;)</code>，即可在测试类直接 <code>@Autowired</code>。</li>
+<li>JUnit4：<code>@RunWith(SpringJUnit4ClassRunner.class)</code> + <code>@ContextConfiguration</code>。</li>
+</ul>
+<p>视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1kR4y1b7Qc/?p=61">P61</a></p>
+<h3 id="6-2-JdbcTemplate"><a href="#6-2-JdbcTemplate" class="headerlink" title="6.2 JdbcTemplate"></a>6.2 JdbcTemplate</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">jdbcTemplate.update(<span class="string">&quot;insert into t_emp values(null,?,?)&quot;</span>, name, age);   <span class="comment">// 增删改</span></span><br><span class="line">jdbcTemplate.queryForObject(<span class="string">&quot;select * from t_emp where id=?&quot;</span>,           <span class="comment">// 单行</span></span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">BeanPropertyRowMapper</span>&lt;&gt;(Emp.class), id);</span><br><span class="line"><span class="type">List</span>&lt;Emp&gt; <span class="variable">list</span> <span class="operator">=</span> jdbcTemplate.query(<span class="string">&quot;select * from t_emp&quot;</span>,             <span class="comment">// 多行</span></span><br><span class="line">        <span class="keyword">new</span> <span class="title class_">BeanPropertyRowMapper</span>&lt;&gt;(Emp.class));</span><br></pre></td></tr></table></figure>
+
+<p>视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1kR4y1b7Qc/?p=62">P62–P64</a></p>
+<h3 id="6-3-声明式事务（当前进度-P65-起）"><a href="#6-3-声明式事务（当前进度-P65-起）" class="headerlink" title="6.3 声明式事务（当前进度 P65 起）"></a>6.3 声明式事务（当前进度 P65 起）</h3><ul>
+<li><strong>场景</strong>：转账两条 update 必须同生共死；<strong>编程式</strong>（try&#x2F;commit&#x2F;rollback）太啰嗦 → <strong>声明式</strong>（<code>@Transactional</code> 一行搞定，底层 AOP）。</li>
+<li><strong>注解式</strong>：<code>@EnableTransactionManagement</code> + <code>TransactionManager</code> bean，方法&#x2F;类上加 <code>@Transactional</code>；也可全注解配置类；XML 式用 <code>&lt;tx:advice&gt;</code> + <code>&lt;aop:config&gt;</code>。</li>
+</ul>
+<p><strong>隔离级别</strong>（<code>isolation</code>）：</p>
+<table>
+<thead>
+<tr>
+<th>级别</th>
+<th>脏读</th>
+<th>不可重复读</th>
+<th>幻读</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>READ UNCOMMITTED</td>
+<td>有</td>
+<td>有</td>
+<td>有</td>
+</tr>
+<tr>
+<td>READ COMMITTED</td>
+<td>无</td>
+<td>有</td>
+<td>有</td>
+</tr>
+<tr>
+<td>REPEATABLE READ（MySQL 默认）</td>
+<td>无</td>
+<td>无</td>
+<td>有</td>
+</tr>
+<tr>
+<td>SERIALIZABLE</td>
+<td>无</td>
+<td>无</td>
+<td>无</td>
+</tr>
+</tbody></table>
+<p><strong>传播行为</strong>（<code>propagation</code>）：<code>REQUIRED</code>（默认，有就加入没有就新建）、<code>REQUIRES_NEW</code>（挂起当前，开新事务）、<code>SUPPORTS</code>&#x2F;<code>NOT_SUPPORTED</code>&#x2F;<code>MANDATORY</code>&#x2F;<code>NEVER</code>&#x2F;<code>NESTED</code>。</p>
+<p>其他属性：<code>readOnly</code> 只读优化、<code>timeout</code> 超时回滚、<code>rollbackFor</code>（默认只回滚运行时异常，<code>rollbackFor = Exception.class</code> 全回滚）。</p>
+<p>视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1kR4y1b7Qc/?p=65">P65–P71</a></p>
+<h3 id="6-4-资源操作-Resources"><a href="#6-4-资源操作-Resources" class="headerlink" title="6.4 资源操作 Resources"></a>6.4 资源操作 Resources</h3><ul>
+<li><code>Resource</code> 接口统一各类资源：<code>ClassPathResource</code>、<code>FileSystemResource</code>、<code>UrlResource</code>、<code>ByteArrayResource</code>……</li>
+<li><code>ResourceLoader</code> 按前缀决定类型：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>前缀</th>
+<th>示例</th>
+<th>实现</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>classpath:</code></td>
+<td><code>classpath:jdbc.properties</code></td>
+<td>ClassPathResource</td>
+</tr>
+<tr>
+<td>无 &#x2F; <code>file:</code> &#x2F; <code>http:</code></td>
+<td><code>C:/a.txt</code></td>
+<td>FileSystemResource &#x2F; UrlResource</td>
+</tr>
+</tbody></table>
+<ul>
+<li><code>ResourceLoaderAware</code> 回调注入 loader；ApplicationContext 本身就是 ResourceLoader，<code>getResource()</code> 直接用。</li>
+</ul>
+<p>视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1kR4y1b7Qc/?p=72">P72–P77</a></p>
+<h3 id="6-5-国际化-i18n"><a href="#6-5-国际化-i18n" class="headerlink" title="6.5 国际化 i18n"></a>6.5 国际化 i18n</h3><ul>
+<li>Java 层：<code>ResourceBundle.getBundle(basename, locale)</code> + <code>.properties</code> 消息文件（<code>xxx_zh_CN.properties</code> &#x2F; <code>xxx_en_US.properties</code>）。</li>
+<li>Spring 层：<code>MessageSource</code> bean（<code>ResourceBundleMessageSource</code> 设 basename），<code>getMessage(code, args, locale)</code>；MVC 里 <code>RequestContext#getMessage</code>。</li>
+</ul>
+<p>视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1kR4y1b7Qc/?p=78">P78–P79</a></p>
+<h3 id="6-6-数据校验-Validation"><a href="#6-6-数据校验-Validation" class="headerlink" title="6.6 数据校验 Validation"></a>6.6 数据校验 Validation</h3><ul>
+<li><strong>方式一 Validator 接口</strong>：实现 <code>supports()</code> + <code>validate()</code>（<code>Errors.rejectValue</code>），手动校验。</li>
+<li><strong>方式二 Bean Validation 注解</strong>（JSR 380）：<code>@NotNull</code>、<code>@NotBlank</code>、<code>@Min</code>、<code>@Email</code>… 配合 <code>@Validated</code> 标 controller、<code>@Valid</code> 标参数，<code>BindingResult</code> 收错误。</li>
+<li><strong>方式三 方法级校验</strong>：配置类 <code>@Validated</code>，方法参数加校验注解，抛 <code>ConstraintViolationException</code>。</li>
+<li><strong>自定义校验</strong>：写注解 + <code>ConstraintValidator&lt;注解, 类型&gt;</code> 实现 <code>isValid()</code>（如”不能全是空白字符”）。</li>
+</ul>
+<p>视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1kR4y1b7Qc/?p=80">P80–P83</a></p>
+<h3 id="6-7-提前编译-AOT"><a href="#6-7-提前编译-AOT" class="headerlink" title="6.7 提前编译 AOT"></a>6.7 提前编译 AOT</h3><ul>
+<li><strong>JIT vs AOT</strong>：JIT 运行时即时编译（启动慢、峰值高）；AOT 提前编译成机器码（启动毫秒级、内存省，适合 Serverless）。</li>
+<li><strong>Native Image</strong>：装 GraalVM + C++ 编译环境（VS&#x2F;WSL），<code>native-image -Dspring.native.verbose=true</code> 打包，产物不依赖 JVM 直接跑；代价是构建慢、反射&#x2F;动态代理需要额外配置。</li>
+<li>Spring6 对 GraalVM Native Image 的支持正是”云原生”方向的关键特性。</li>
+</ul>
+<p>视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1kR4y1b7Qc/?p=84">P84–P87</a></p>
+<h3 id="6-8-课程总结"><a href="#6-8-课程总结" class="headerlink" title="6.8 课程总结"></a>6.8 课程总结</h3><p>P88 回顾全课主线：<strong>IoC 解耦对象创建 → 手写 IoC 悟原理 → AOP 解耦横切逻辑 → 事务&#x2F;Resources&#x2F;i18n&#x2F;Validation 学整合 → AOT 看未来</strong>。学完它，再看 Spring Boot 就是”自动装配的 Spring”。</p>
+<p>视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1kR4y1b7Qc/?p=88">P88</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://yaosifan2023.github.io">姚思凡</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://yaosifan2023.github.io/2026/10/17/Spring6%E8%AF%BE%E7%A8%8B%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">https://yaosifan2023.github.io/2026/10/17/Spring6%E8%AF%BE%E7%A8%8B%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://yaosifan2023.github.io" target="_blank">欢迎来到fan的博客</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><a class="post-meta__tags" href="/tags/Java/">Java</a><a class="post-meta__tags" href="/tags/Spring/">Spring</a><a class="post-meta__tags" href="/tags/%E6%A1%86%E6%9E%B6/">框架</a></div><div class="post-share"><div class="social-share" data-image="/img/spring6-course-cover.svg" data-sites="facebook,x,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.6/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2026/10/07/%E6%84%8F%E5%A2%83%E8%A7%86%E9%A2%91%E4%B8%93%E6%A0%8F%E4%B8%8A%E7%BA%BF/" title="🎬 意境视频专栏上线：原创意境短片合集"><img class="cover" src="/img/video-column-cover.svg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">🎬 意境视频专栏上线：原创意境短片合集</div></div><div class="info-2"><div class="info-item-1">视频专栏正式上线！👉 进入视频专栏{: .btn .btn-primary } 这里汇集我的原创意境短片 —— 全部由代码逐帧生成，配上原创音乐，每一部 60 秒，讲一个说不清道不明的故事： 📖 本期片单   序号 片名 一句话    壹 相遇与离别 夜色街口，一场相逢，一次转身   贰 缘分 · 东西方之思 月老红线 与 希腊神话，两种回答   叁 运气的状态 概率之骰，起落无常   肆 命运的方程 五个公式，写尽注定的与自由的   伍 暗恋 · 量子实验 观测即改变，开口即坍缩   陆 遗憾 · 时间之箭 错过的 都以星辰归还   柒 熵增 · 万物之命途 万物从有序流向无序 生命以负熵为食   捌 悲观主义 · 深夜哲学课 钟摆与漏杯之间 悲观到深处是温柔   专栏会持续更新，后续新片都会收录在 **视频专栏**，也可以随时点导航栏的「🎬 视频」直达。 </div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2024/01/06/java%E6%B3%A8%E5%86%8C/" title="java实现登入和注册的实现"><img class="cover" src="https://picsum.photos/seed/blog1/800/450" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-06</div><div class="info-item-2">java实现登入和注册的实现</div></div><div class="info-2"><div class="info-item-1">java实现登入和注册 的实现注册操作设置循环可以一直进行注册 123456789101112131415161718192021222324252627282930313233public static void reGister() // 注册界面   &#123;       String username =null;       while (true)&#123;           System.out.println(&quot;请输入你的用户名&quot;);           username = scan.next();           // 判断是否有一样的用户名           int pos = 0 ;           for(int i = 0 ;i &lt; arr1.length ;i ++ ) &#123;               if (arr1[i] != null) &#123;                   if (arr1[i].equals(username)) &#123;                 ...</div></div></div></a><a class="pagination-related" href="/2026/09/27/MySQL%E8%AF%BE%E7%A8%8B%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" title="MySQL 课程知识分章总结"><img class="cover" src="/img/mysql-course-cover.jpg" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-09-27</div><div class="info-item-2">MySQL 课程知识分章总结</div></div><div class="info-2"><div class="info-item-1">MySQL 课程知识分章总结跟着 B 站黑马程序员的 MySQL 全套课程学习（课程地址，共 195 集约 30 小时）。这篇文章把课程知识按章节整理：第一节是学习路线，后面每一节对应课程的一章。每章末尾附对应的视频分 P。 第一节：学习路线  基础篇（P1–57）：概述、SQL 四类语句、函数、约束、多表查询、事务 进阶篇（P58–152）：存储引擎、索引与优化、视图、存储过程、触发器、锁、InnoDB 底层 运维篇（P153–195）：日志、主从复制、分库分表、读写分离   我的进度：P1–P23 已完成，从 DCL 开始继续往后学。  第二节：基础篇2.1 数据库概述 数据库（DB）：存储数据的仓库；数据库管理系统（DBMS）：操纵和管理数据库的软件（如 MySQL）；SQL：操作关系型数据库的编程语言。 关系型数据库：数据建立在关系模型上，由多张相互连接的二维表组成。常见的有 MySQL、Oracle、SQL Server、PostgreSQL。 MySQL 数据模型：一个数据库服务器上可以建多个数据库，每个数据库有多张表，表中是行数据。 SQL 语句分类（课程主线）： ...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="giscus-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">姚思凡</div><div class="author-info-description">保持学习，保持热爱</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的小站 🎉</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring6-%E8%AF%BE%E7%A8%8B%E7%9F%A5%E8%AF%86%E5%88%86%E7%AB%A0%E6%80%BB%E7%BB%93"><span class="toc-number">1.</span> <span class="toc-text">Spring6 课程知识分章总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E8%8A%82%EF%BC%9A%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF"><span class="toc-number">2.</span> <span class="toc-text">第一节：学习路线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E8%8A%82%EF%BC%9A%E5%9F%BA%E7%A1%80%E7%AF%87"><span class="toc-number">3.</span> <span class="toc-text">第二节：基础篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-Spring-%E6%A6%82%E8%BF%B0"><span class="toc-number">3.1.</span> <span class="toc-text">2.1 Spring 概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B"><span class="toc-number">3.2.</span> <span class="toc-text">2.2 入门案例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E6%95%B4%E5%90%88-Log4j2-%E6%97%A5%E5%BF%97%E6%A1%86%E6%9E%B6"><span class="toc-number">3.3.</span> <span class="toc-text">2.3 整合 Log4j2 日志框架</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E8%8A%82%EF%BC%9AIoC-%E5%AE%B9%E5%99%A8%EF%BC%88%E6%A0%B8%E5%BF%83%E4%B8%80%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">第三节：IoC 容器（核心一）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-IoC-%E4%B8%8E-DI-%E6%A6%82%E5%BF%B5"><span class="toc-number">4.1.</span> <span class="toc-text">3.1 IoC 与 DI 概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E5%9F%BA%E4%BA%8E-XML-%E7%AE%A1%E7%90%86-Bean%EF%BC%8813-%E4%B8%AA%E5%AE%9E%E9%AA%8C%EF%BC%89"><span class="toc-number">4.2.</span> <span class="toc-text">3.2 基于 XML 管理 Bean（13 个实验）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E5%9F%BA%E4%BA%8E%E6%B3%A8%E8%A7%A3%E7%AE%A1%E7%90%86-Bean"><span class="toc-number">4.3.</span> <span class="toc-text">3.3 基于注解管理 Bean</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E8%8A%82%EF%BC%9A%E6%89%8B%E5%86%99-IoC%EF%BC%88%E5%8E%9F%E7%90%86%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">第四节：手写 IoC（原理）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E8%8A%82%EF%BC%9AAOP-%E9%9D%A2%E5%90%91%E5%88%87%E9%9D%A2%EF%BC%88%E6%A0%B8%E5%BF%83%E4%BA%8C%EF%BC%89"><span class="toc-number">6.</span> <span class="toc-text">第五节：AOP 面向切面（核心二）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E8%8A%82%EF%BC%9A%E6%95%B4%E5%90%88%E7%AF%87"><span class="toc-number">7.</span> <span class="toc-text">第六节：整合篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95-JUnit"><span class="toc-number">7.1.</span> <span class="toc-text">6.1 单元测试 JUnit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-JdbcTemplate"><span class="toc-number">7.2.</span> <span class="toc-text">6.2 JdbcTemplate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-%E5%A3%B0%E6%98%8E%E5%BC%8F%E4%BA%8B%E5%8A%A1%EF%BC%88%E5%BD%93%E5%89%8D%E8%BF%9B%E5%BA%A6-P65-%E8%B5%B7%EF%BC%89"><span class="toc-number">7.3.</span> <span class="toc-text">6.3 声明式事务（当前进度 P65 起）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-4-%E8%B5%84%E6%BA%90%E6%93%8D%E4%BD%9C-Resources"><span class="toc-number">7.4.</span> <span class="toc-text">6.4 资源操作 Resources</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-5-%E5%9B%BD%E9%99%85%E5%8C%96-i18n"><span class="toc-number">7.5.</span> <span class="toc-text">6.5 国际化 i18n</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-6-%E6%95%B0%E6%8D%AE%E6%A0%A1%E9%AA%8C-Validation"><span class="toc-number">7.6.</span> <span class="toc-text">6.6 数据校验 Validation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-7-%E6%8F%90%E5%89%8D%E7%BC%96%E8%AF%91-AOT"><span class="toc-number">7.7.</span> <span class="toc-text">6.7 提前编译 AOT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-8-%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93"><span class="toc-number">7.8.</span> <span class="toc-text">6.8 课程总结</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/10/17/Spring6%E8%AF%BE%E7%A8%8B%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" title="Spring6 课程知识分章总结"><img src="/img/spring6-course-cover.svg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Spring6 课程知识分章总结"/></a><div class="content"><a class="title" href="/2026/10/17/Spring6%E8%AF%BE%E7%A8%8B%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" title="Spring6 课程知识分章总结">Spring6 课程知识分章总结</a><time datetime="2026-10-17T09:00:00.000Z" title="发表于 2026-10-17 17:00:00">2026-10-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/10/07/%E6%84%8F%E5%A2%83%E8%A7%86%E9%A2%91%E4%B8%93%E6%A0%8F%E4%B8%8A%E7%BA%BF/" title="🎬 意境视频专栏上线：原创意境短片合集"><img src="/img/video-column-cover.svg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="🎬 意境视频专栏上线：原创意境短片合集"/></a><div class="content"><a class="title" href="/2026/10/07/%E6%84%8F%E5%A2%83%E8%A7%86%E9%A2%91%E4%B8%93%E6%A0%8F%E4%B8%8A%E7%BA%BF/" title="🎬 意境视频专栏上线：原创意境短片合集">🎬 意境视频专栏上线：原创意境短片合集</a><time datetime="2026-10-07T08:10:00.000Z" title="发表于 2026-10-07 16:10:00">2026-10-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/09/27/MySQL%E8%AF%BE%E7%A8%8B%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" title="MySQL 课程知识分章总结"><img src="/img/mysql-course-cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MySQL 课程知识分章总结"/></a><div class="content"><a class="title" href="/2026/09/27/MySQL%E8%AF%BE%E7%A8%8B%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" title="MySQL 课程知识分章总结">MySQL 课程知识分章总结</a><time datetime="2026-09-27T15:30:00.000Z" title="发表于 2026-09-27 23:30:00">2026-09-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/06/%E5%AD%A6%E7%94%9F%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" title="简单的学生数据处理"><img src="https://picsum.photos/seed/blog2/800/450" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="简单的学生数据处理"/></a><div class="content"><a class="title" href="/2024/01/06/%E5%AD%A6%E7%94%9F%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/" title="简单的学生数据处理">简单的学生数据处理</a><time datetime="2024-01-06T03:57:52.000Z" title="发表于 2024-01-06 11:57:52">2024-01-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/06/%E6%88%BF%E4%BB%B7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" title="链家租房数据分析"><img src="https://picsum.photos/seed/blog3/800/450" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="链家租房数据分析"/></a><div class="content"><a class="title" href="/2024/01/06/%E6%88%BF%E4%BB%B7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" title="链家租房数据分析">链家租房数据分析</a><time datetime="2024-01-06T03:57:44.000Z" title="发表于 2024-01-06 11:57:44">2024-01-06</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;&nbsp;2024 - 2026 By 姚思凡</span></div><div class="footer_custom_text">每天进步一点点</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=5.7.0"></script><script src="/js/main.js?v=5.7.0"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = {"data-lang":"zh-CN"}
+
+  const getGiscusTheme = theme => theme === 'dark' ? 'dark' : 'light'
+
+  const createScriptElement = config => {
+    const ele = document.createElement('script')
+    Object.entries(config).forEach(([key, value]) => {
+      ele.setAttribute(key, value)
+    })
+    return ele
+  }
+
+  const loadGiscus = (el = document, key) => {
+    const mappingConfig = isShuoshuo
+      ? { 'data-mapping': 'specific', 'data-term': key }
+      : { 'data-mapping': (option && option['data-mapping']) || 'pathname' }
+
+    const giscusConfig = {
+      src: 'https://giscus.app/client.js',
+      'data-repo': 'yaosifan2023/yaosifan2023.github.io',
+      'data-repo-id': 'R_kgDOLBKY1Q',
+      'data-category-id': 'DIC_kwDOLBKY1c4DGe7Y',
+      'data-theme': getGiscusTheme(document.documentElement.getAttribute('data-theme')),
+      'data-reactions-enabled': '1',
+      crossorigin: 'anonymous',
+      async: true,
+      ...option,
+      ...mappingConfig
+    }
+
+    const scriptElement = createScriptElement(giscusConfig)
+
+    el.querySelector('#giscus-wrap').appendChild(scriptElement)
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyGiscus = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const changeGiscusTheme = theme => {
+    const iframe = document.querySelector('#giscus-wrap iframe')
+    if (iframe) {
+      const message = {
+        giscus: {
+          setConfig: {
+            theme: getGiscusTheme(theme)
+          }
+        }
+      }
+      iframe.contentWindow.postMessage(message, 'https://giscus.app')
+    }
+  }
+
+  btf.addGlobalFn('themeChange', changeGiscusTheme, 'giscus')
+
+  if (isShuoshuo) {
+    'Giscus' === 'Giscus'
+      ? window.shuoshuoComment = { loadComment: loadGiscus }
+      : window.loadOtherComment = loadGiscus
+    return
+  }
+
+  if ('Giscus' === 'Giscus' || !false) {
+    if (false) btf.loadComment(document.getElementById('giscus-wrap'), loadGiscus)
+    else loadGiscus()
+  } else {
+    window.loadOtherComment = loadGiscus
+  }
+})()</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

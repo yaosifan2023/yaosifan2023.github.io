@@ -63,5 +63,5 @@
   <rect x="660" y="260" width="280" height="38" rx="6" fill="#FFF1F2" stroke="#FECDD3"/>
   <text x="800" y="284" text-anchor="middle" font-size="15" fill="#9F1239">读写分离</text>
 
-  <text x="480" y="414" text-anchor="middle" font-size="12" fill="#6B7280">✓ = 已完成（P1–P23，对应笔记《MySQL 学习笔记 01：增删改查》）　绿色 = 当前进度</text>
+  <text x="480" y="414" text-anchor="middle" font-size="12" fill="#6B7280">✓ = 已完成（P1–P23）　绿色 = 当前进度</text>
 </svg>
