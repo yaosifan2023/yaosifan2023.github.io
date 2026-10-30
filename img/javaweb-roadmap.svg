@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="430" viewBox="0 0 960 430" font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+  <rect width="960" height="430" fill="#FFFFFF"/>
+  <text x="480" y="32" text-anchor="middle" font-size="21" font-weight="bold" fill="#1F2937">JavaWeb 学习路线图 · 黑马程序员全套课程（200 集）</text>
+  <text x="480" y="54" text-anchor="middle" font-size="13" fill="#6B7280">前端篇 P2–49　→　后端基础篇 P50–134　→　后端实战篇 P135–199</text>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9CA3AF"/>
+    </marker>
+  </defs>
+
+  <!-- 阶段间箭头 -->
+  <line x1="304" y1="95" x2="334" y2="95" stroke="#9CA3AF" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="624" y1="95" x2="654" y2="95" stroke="#9CA3AF" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- 前端篇 -->
+  <rect x="20" y="72" width="280" height="46" rx="8" fill="#15803D"/>
+  <text x="160" y="92" text-anchor="middle" font-size="18" font-weight="bold" fill="#FFFFFF">前端篇</text>
+  <text x="160" y="110" text-anchor="middle" font-size="12" fill="#DCFCE7">P2–49 · Web 前端开发</text>
+
+  <rect x="20" y="128" width="280" height="38" rx="6" fill="#F0FDF4" stroke="#BBF7D0"/>
+  <text x="160" y="152" text-anchor="middle" font-size="15" fill="#166534">HTML / CSS 快速入门 ✓</text>
+  <rect x="20" y="172" width="280" height="38" rx="6" fill="#F0FDF4" stroke="#BBF7D0"/>
+  <text x="160" y="196" text-anchor="middle" font-size="15" fill="#166534">JavaScript · DOM · 事件 ✓</text>
+  <rect x="20" y="216" width="280" height="38" rx="6" fill="#F0FDF4" stroke="#BBF7D0"/>
+  <text x="160" y="240" text-anchor="middle" font-size="15" fill="#166534">Vue 指令与生命周期 ✓</text>
+  <rect x="20" y="260" width="280" height="38" rx="6" fill="#F0FDF4" stroke="#BBF7D0"/>
+  <text x="160" y="284" text-anchor="middle" font-size="15" fill="#166534">Axios · 前端工程化 · Element ✓</text>
+
+  <!-- 后端基础篇 -->
+  <rect x="340" y="72" width="280" height="46" rx="8" fill="#C2410C"/>
+  <text x="480" y="92" text-anchor="middle" font-size="18" font-weight="bold" fill="#FFFFFF">后端基础篇</text>
+  <text x="480" y="110" text-anchor="middle" font-size="12" fill="#FFEDD5">P50–134 · 环境到数据库</text>
+
+  <rect x="340" y="128" width="280" height="38" rx="6" fill="#FFF7ED" stroke="#FED7AA"/>
+  <text x="480" y="152" text-anchor="middle" font-size="15" fill="#9A3412">Maven · SpringBoot Web 入门 ✓</text>
+  <rect x="340" y="172" width="280" height="38" rx="6" fill="#FFF7ED" stroke="#FED7AA"/>
+  <text x="480" y="196" text-anchor="middle" font-size="15" fill="#9A3412">HTTP 协议 · Tomcat ✓</text>
+  <rect x="340" y="216" width="280" height="38" rx="6" fill="#FFF7ED" stroke="#FED7AA"/>
+  <text x="480" y="240" text-anchor="middle" font-size="15" fill="#9A3412">请求响应 · 统一响应结果 ✓</text>
+  <rect x="340" y="260" width="280" height="38" rx="6" fill="#DCFCE7" stroke="#86EFAC"/>
+  <text x="480" y="284" text-anchor="middle" font-size="15" font-weight="bold" fill="#166534">分层解耦 · 三层架构（当前 · P75）</text>
+  <rect x="340" y="304" width="280" height="38" rx="6" fill="#FFF7ED" stroke="#FED7AA"/>
+  <text x="480" y="328" text-anchor="middle" font-size="15" fill="#9A3412">MySQL · MyBatis（P80 起）</text>
+
+  <!-- 后端实战篇 -->
+  <rect x="660" y="72" width="280" height="46" rx="8" fill="#BE123C"/>
+  <text x="800" y="92" text-anchor="middle" font-size="18" font-weight="bold" fill="#FFFFFF">后端实战篇</text>
+  <text x="800" y="110" text-anchor="middle" font-size="12" fill="#FFE4E6">P135–199 · 走向工程化</text>
+
+  <rect x="660" y="128" width="280" height="38" rx="6" fill="#FFF1F2" stroke="#FECDD3"/>
+  <text x="800" y="152" text-anchor="middle" font-size="15" fill="#9F1239">案例 · 部门/员工管理 · 文件上传</text>
+  <rect x="660" y="172" width="280" height="38" rx="6" fill="#FFF1F2" stroke="#FECDD3"/>
+  <text x="800" y="196" text-anchor="middle" font-size="15" fill="#9F1239">登录认证 · JWT · Filter/Interceptor</text>
+  <rect x="660" y="216" width="280" height="38" rx="6" fill="#FFF1F2" stroke="#FECDD3"/>
+  <text x="800" y="240" text-anchor="middle" font-size="15" fill="#9F1239">异常处理 · 事务 · AOP</text>
+  <rect x="660" y="260" width="280" height="38" rx="6" fill="#FFF1F2" stroke="#FECDD3"/>
+  <text x="800" y="284" text-anchor="middle" font-size="15" fill="#9F1239">SpringBoot 自动配置原理</text>
+  <rect x="660" y="304" width="280" height="38" rx="6" fill="#FFF1F2" stroke="#FECDD3"/>
+  <text x="800" y="328" text-anchor="middle" font-size="15" fill="#9F1239">Maven 高级 · 分模块/继承聚合/私服</text>
+
+  <text x="480" y="414" text-anchor="middle" font-size="12" fill="#6B7280">✓ = 已完成（P1–P74）　绿色 = 当前进度（分层解耦-三层架构 P75）</text>
+</svg>

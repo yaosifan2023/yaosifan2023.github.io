@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="40%" r="75%">
+      <stop offset="0%" stop-color="#16233d"/>
+      <stop offset="55%" stop-color="#0b1526"/>
+      <stop offset="100%" stop-color="#040910"/>
+    </radialGradient>
+    <linearGradient id="tier" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f7b733"/>
+      <stop offset="100%" stop-color="#e2620f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <!-- 三层架构图标：Controller / Service / Mapper -->
+  <g>
+    <rect x="470" y="150" width="260" height="46" rx="9" fill="url(#tier)"/>
+    <text x="600" y="181" text-anchor="middle" fill="#1b1206"
+          font-family="Consolas,'Microsoft YaHei',monospace" font-size="22" font-weight="bold" letter-spacing="3">Controller</text>
+    <rect x="470" y="208" width="260" height="46" rx="9" fill="url(#tier)" opacity="0.88"/>
+    <text x="600" y="239" text-anchor="middle" fill="#1b1206"
+          font-family="Consolas,'Microsoft YaHei',monospace" font-size="22" font-weight="bold" letter-spacing="3">Service</text>
+    <rect x="470" y="266" width="260" height="46" rx="9" fill="url(#tier)" opacity="0.76"/>
+    <text x="600" y="297" text-anchor="middle" fill="#1b1206"
+          font-family="Consolas,'Microsoft YaHei',monospace" font-size="22" font-weight="bold" letter-spacing="3">Mapper</text>
+    <line x1="600" y1="196" x2="600" y2="208" stroke="#e2620f" stroke-width="3"/>
+    <line x1="600" y1="254" x2="600" y2="266" stroke="#e2620f" stroke-width="3"/>
+  </g>
+  <g fill="none" stroke="#f7b733" opacity="0.35" stroke-width="2">
+    <circle cx="600" cy="231" r="120" opacity="0.4"/>
+    <circle cx="600" cy="231" r="142" stroke-dasharray="3 8" opacity="0.55"/>
+  </g>
+  <text x="600" y="430" text-anchor="middle" fill="#eef4ff"
+        font-family="'Microsoft YaHei','PingFang SC',sans-serif" font-size="72" font-weight="bold" letter-spacing="14">JavaWeb 课程学习总结</text>
+  <text x="600" y="496" text-anchor="middle" fill="#9fc3ef"
+        font-family="Georgia, serif" font-size="26" letter-spacing="8">SPRINGBOOT · MYBATIS · JWT · AOP</text>
+</svg>
